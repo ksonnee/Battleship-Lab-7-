@@ -20,7 +20,7 @@ void BattleshipGame::placeShips()
     std::cout << "Computer is placing its ships...";
 }
 
-void BattleshipGame::placePlayerShips()
+void BattleshipGame::placePlayerShips()//input section for player to place ships
 {
     for (i = 0; i < 5; ++i)
     {
@@ -41,7 +41,7 @@ void BattleshipGame::placePlayerShips()
     }
 }
 
-void BattleshipGame::placeComputerShips()
+void BattleshipGame::placeComputerShips()//randomly placing computers ships
 {
     srand(static_cast<unsigned>(time(0))); // Seed the random number generator
 
@@ -60,7 +60,7 @@ void BattleshipGame::placeComputerShips()
     }
 }
 
-void BattleshipGame::shootAtPlayer()
+void BattleshipGame::shootAtPlayer()//computers turn
 {
     int x, y;
     std::cout << "Computer's turn to shoot.Enter target coordinates (x, y): ";
@@ -70,7 +70,7 @@ void BattleshipGame::shootAtPlayer()
     BattleshipGame::shoot(playerFleet, x, y);
 }
 
-void BattleshipGame::shootAtComputer()
+void BattleshipGame::shootAtComputer()//players turn
 {
     int x, y;
     std::cout << "Player's turn to shoot.Enter target coordinates (x, y): ";
@@ -118,7 +118,7 @@ void BattleshipGame::printAllGrids()
     gameGrid.printAllGrids();
 }
 
-void BattleshipGame::initializeFleet(Ship fleet[5])
+void BattleshipGame::initializeFleet(Ship fleet[5]) //initializing the fleet
 {
     fleet[0].setName("Carrier");
     fleet[0].setHp(5);
@@ -140,7 +140,6 @@ void BattleshipGame::initializeFleet(Ship fleet[5])
     fleet[4].setHp(2);
     fleet[4].setLength(2);
 }
-// ... (previous code)
 
 bool BattleshipGame::checkPlayerWin()
 {
@@ -156,7 +155,7 @@ bool BattleshipGame::checkPlayerWin()
 
 void BattleshipGame::playGame()
 {
-    placeShips(); // Place player and computer ships
+    placeShips(); 
 
     while (true)
     {
